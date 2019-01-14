@@ -28,4 +28,33 @@ html {box-sizing: border-box;}
 
 #checkButton {
     margin-right: 150px;
+    width: 55px;
+    border: none;
+    border-radius: 9px;
+    background: green;
+    color: white;
+}
+
+#checkButton:focus {
+    outline: none;
+}
+
+#checkButton:hover {
+    background: darkgreen;
+}
+
+#noButton {
+    width: 55px;
+    border: none;
+    border-radius: 9px;
+    background: darkred;
+    color: white;
+}
+
+#noButton:focus {
+    outline: none;
+}
+
+#noButton:hover {
+    background: maroon;
 }

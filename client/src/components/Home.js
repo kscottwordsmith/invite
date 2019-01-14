@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { BrowserRouter as Router, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { getPerson, changeStatus, getGoingNums, getNotGoingNums } from '../actions/people'
 import '../styles/Home.css'
@@ -39,7 +39,7 @@ class Home extends Component {
           {person.phone} <br />
           {person.email}
           <div id="buttonsContainer">
-            <button onClick={this.goingClick} id="checkButton">Yep</button> <button onClick={this.notgoingClick} id="noButton">Nah</button>
+            <button onClick={this.goingClick} id="checkButton"><i className="fa fa-check"></i></button> <button onClick={this.notgoingClick} id="noButton"><i className="fa fa-times"></i></button>
           </div> 
       </div>
     )

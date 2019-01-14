@@ -29,3 +29,10 @@ html {box-sizing: border-box;}
 .name {
     text-transform: capitalize;
 }
+
+#goingBack {
+    width: 30px;
+    background: lightgreen;
+    padding: 5px;
+    border-radius: 9px;
+}

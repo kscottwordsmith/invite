@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from 'react'
+import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { getNotGoing } from '../actions/people'
 import '../styles/NotGoing.css'
@@ -15,6 +16,7 @@ class NotGoing extends Component {
                 <div className="name">{person.fname} {person.lname}</div>
                 {person.email} <br />
                 {person.phone}
+                <p id="goingBack"><Link to="/"><i className="fa fa-chevron-left"></i></Link></p>
             </div>
         ))
         return (
