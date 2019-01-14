@@ -1,17 +1,46 @@
 import React, { Component } from 'react'
+import { BrowserRouter as Router, Link } from 'react-router-dom'
 import { connect } from 'react-redux'
-import { makeACall } from '../actions/example'
+import { getPerson, changeStatus, getGoingNums, getNotGoingNums } from '../actions/people'
+import '../styles/Home.css'
 
 class Home extends Component {
   componentDidMount() {
-    makeACall()
+    getPerson()
+    getGoingNums()
+    getNotGoingNums()
   }
-  
+
+  goingClick = (e) => {
+    e.preventDefault()
+    changeStatus(this.props.currentperson.id, "going")
+  }
+
+  notgoingClick = (e) => {
+    e.preventDefault()
+    changeStatus(this.props.currentperson.id, "notgoing")
+  }
+
+  componentWillReceiveProps() {
+    getGoingNums()
+    getNotGoingNums()
+  }
+
   render() {
+    const person = this.props.currentperson
+
     return (
-      <div>
-        <h1>Home</h1>
-        <p>{this.props.example}</p>
+      <div id="personbox">
+          <p><Link to="/going">Going:</Link> {this.props.numgoing} <Link to="/notgoing">Not Going:</Link> {this.props.numnotgoing}</p>
+          <img src={person.picture} alt={person.id} id="avatar"/>
+          <div id="namesContainer">
+            {person.fname} {person.lname}
+          </div>
+          {person.phone} <br />
+          {person.email}
+          <div id="buttonsContainer">
+            <button onClick={this.goingClick} id="checkButton">Yep</button> <button onClick={this.notgoingClick} id="noButton">Nah</button>
+          </div> 
       </div>
     )
   }
@@ -19,7 +48,9 @@ class Home extends Component {
 
 function mapStateToProps(appState) {
   return {
-    example: appState.exampleReducer.example
+    currentperson: appState.peopleReducer.currentperson,
+    numgoing: appState.peopleReducer.numgoing,
+    numnotgoing: appState.peopleReducer.numnotgoing
   }
 }
 

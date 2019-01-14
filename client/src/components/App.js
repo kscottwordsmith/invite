@@ -4,6 +4,9 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 import store from '../store'
 
 import Home from './Home'
+import Going from './Going'
+import NotGoing from './NotGoing'
+
 
 class App extends Component {
   render() {
@@ -12,6 +15,9 @@ class App extends Component {
         <Router>
           <div>
             <Route path="/" exact component={Home} />
+            <Route path="/going" component={Going} />
+            <Route path="/notgoing" component={NotGoing} />
+            
           </div>
         </Router>
       </Provider>

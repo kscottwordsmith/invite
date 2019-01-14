@@ -1,0 +1,31 @@
+html {box-sizing: border-box;}
+*, *:before, *:after {box-sizing: inherit;}
+
+#notgoingOverall {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.notgoingContainer {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    background: lightgrey;
+    margin-bottom: 5px;
+    margin-right: 5px;
+    width: 240px;
+    border-radius: 20px;
+    padding: 7px;
+    align-items: center;
+    text-align: center;
+}
+
+.avatar {
+    width: 50px;
+    border-radius: 25px;
+}
+
+.name {
+    text-transform: capitalize;
+}

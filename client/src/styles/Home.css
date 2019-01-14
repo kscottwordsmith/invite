@@ -1,0 +1,31 @@
+html {box-sizing: border-box;}
+*, *:before, *:after {box-sizing: inherit;}
+
+#personbox {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    background: rgb(239, 241, 242);
+    border-radius: 15px;
+    margin: 0 auto;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+}
+
+#avatar {
+    width: 50px;
+    border-radius: 25px;
+}
+
+#namesContainer {
+    text-transform: capitalize;
+}
+
+#buttonsContainer {
+    padding-top: 3px;
+}
+
+#checkButton {
+    margin-right: 150px;
+}
